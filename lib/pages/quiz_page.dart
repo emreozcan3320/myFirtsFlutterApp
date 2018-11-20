@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../utils/question.dart';
 import '../utils/quiz.dart';
+import '../UI/answerButton_file.dart';
+import '../UI/question_text.dart';
 
 
 class QuizPage extends StatefulWidget {
@@ -18,32 +20,9 @@ class QuizePageState extends State<QuizPage>{
       children: <Widget>[
         new  Column( //This is our main page 
           children: <Widget>[
-            new Expanded( //True button
-              child: new Material(
-                color: Colors.greenAccent,
-                child: new InkWell(
-                  onTap: () => print("You answered true"),
-                  child: new Center(
-                    child: new Container(
-                      child: new Text("True"),
-                    ),
-                  )
-                ),
-              ),
-            ),
-            new Expanded( //False button
-              child: new Material(
-                color: Colors.redAccent,
-                child: new InkWell(
-                  onTap: () => print("You answered false"),
-                  child: new Center(
-                    child: new Container(
-                      child: new Text("False"),
-                    ),
-                  )
-                ),
-              ),
-            )
+            new AnswerButton(true,() => print("You answered Ture") ),
+            new QuestionText("Pizza is nice", 1),
+            new AnswerButton(false, () { print("You answered False");} )
           ],
         ),
       ],
