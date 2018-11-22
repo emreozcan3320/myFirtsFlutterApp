@@ -4,7 +4,7 @@ class Quiz {
 
   List<Question> _questions;
   int _currentQuestionIndex = -1;
-  int _score ;
+  int _score = 0;
 
   Quiz(this._questions){
     _questions.shuffle();
@@ -22,7 +22,7 @@ Question get nextQuestion{
 }
 
 void answer(bool isCorrect){
-  if(isCorrect) _score++;
+  if(isCorrect) _score = _score +1;
 }
 
 }
