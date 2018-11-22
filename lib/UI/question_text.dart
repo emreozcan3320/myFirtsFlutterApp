@@ -20,7 +20,7 @@ class QuestionTextState extends State<QuestionText> with SingleTickerProviderSta
   void initState(){
     super.initState();
     _fontSizeAnimationController = new AnimationController(duration: new Duration(milliseconds: 500), vsync: this );
-    _fontSizeAnimation = new CurvedAnimation(parent: _fontSizeAnimationController, curve: Curves.linear);
+    _fontSizeAnimation = new CurvedAnimation(parent: _fontSizeAnimationController, curve: Curves.bounceOut);
     _fontSizeAnimation.addListener(() => this.setState(() {}));
     _fontSizeAnimationController.forward();
   }
